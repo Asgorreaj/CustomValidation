@@ -29,6 +29,10 @@
     <br />
     <span class="text-danger">@Html.ValidationMessage("Email")</span>
     <br />
+    DateOfBirth : <input type="text" value="@(Model==null ? "":Model.DateOfBirth)" name="DateOfBirth" />
+    <br />
+    <span class="text-danger">@Html.ValidationMessage("DateOfBirth")</span>
+    <br />
     <input type="submit" value="Submit" class="btn btn-danger" />
 
 </form>

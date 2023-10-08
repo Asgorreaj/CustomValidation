@@ -40,6 +40,11 @@ namespace CustomValidation.Models
             ErrorMessage = "Must Use This Pattern ( **-*****-*@student.aiub.edu )")]
         public string Email { get; set; }
 
+        [Required(ErrorMessage = " Provide Your DateOffBirth")]
+        [RegularExpression(@"^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$",
+            ErrorMessage = "Follow This Pattern dd/mm/yyyy")]
+        public string DateOfBirth { get; set; }
+
 
 
     }
