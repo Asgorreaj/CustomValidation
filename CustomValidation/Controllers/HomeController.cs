@@ -1,4 +1,5 @@
 ﻿using System;
+using CustomValidation.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -24,13 +25,35 @@ namespace CustomValidation.Controllers
             return View();
         }
 
-        public ActionResult SignIn()
+        [HttpGet]
+        public ActionResult Signin()
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Signin(SignIn s)
+        {
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            return View(s);
+        }
+
+        [HttpGet]
         public ActionResult SignUp()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult SignUp(SignUp s)
+        {
+            if (ModelState.IsValid)
+            {
+
+                return RedirectToAction("Signin");
+            }
+            return View(s);
         }
 
     }

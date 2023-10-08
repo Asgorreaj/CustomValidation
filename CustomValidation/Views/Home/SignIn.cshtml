@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "SignIn";
+    Layout = "~/Views/Shared/_NewLayout.cshtml";
+}
+
+<h2>Signin</h2>
+
+<form action="" method="post">
+    <input type="text" class="form-control" value="@(Model==null ? "":Model.Username)" name="Username" placeholder="Username" />
+    <span class="text-danger">@Html.ValidationMessage("Username")</span>
+    <input type="password" class="form-control" value="@(Model==null ? "":Model.Password)" name="Password" placeholder="Password" />
+    <span class="text-danger">@Html.ValidationMessage("Password")</span>
+    <input type="submit" value="Submit" class="btn btn-danger" />
+</form>

@@ -9,9 +9,22 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>_NewLayout</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div> 
+    <div>
+        <a class="btn btn-primary" href="/">Home</a>
+        <a class="btn btn-success" href="/Home/about">About</a>
+        <a class="btn btn-success" href="/Home/contact">Contact</a>
+        <a class="btn btn-primary" href="/home/signIn">Sign In</a>
+        <a class="btn btn-danger" href="/home/signup">Sign up</a>
     </div>
+    <div>
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
